@@ -28,7 +28,13 @@ int articleLastid = 0;
                 String body = input.nextLine().trim();
                 int id = articleLastid + 1;
                 articleLastid = id;
-                System.out.printf("%d번 게시물이 입력 되었습니다.\n",id);
+
+                Article article = new Article();
+                article.id = id;
+                article.body = body;
+                article.title = title;
+                System.out.println("생성 된 게시물 객체 :" + article);
+                System.out.printf("%d번 게시물이 입력 되었습니다.\n",article.id);
 
 
 
@@ -45,4 +51,10 @@ int articleLastid = 0;
 
 
     }
+}
+class Article{
+    int id;
+    String title;
+    String body;
+
 }
