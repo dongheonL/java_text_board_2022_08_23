@@ -60,6 +60,8 @@ public class Main {
                     Article article = new Article(articleLastId, title, body);
                     lastArticle = article;
 
+                    articles.add(article);
+
                     System.out.println("생성된 게시물 객체 :"+article);
                     System.out.printf("%d번 게시물이 등록되었습니다.\n", articleLastId);
                 }
