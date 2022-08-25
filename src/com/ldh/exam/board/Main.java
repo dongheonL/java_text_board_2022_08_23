@@ -13,13 +13,16 @@ public class Main {
 
     }
     public static void main(String[] args) {
-        int lastId =0;
+        int articleLastId =0;
         Article lastArticle = null;
 
         ArrayList<Article>articles = new ArrayList<>();
 
 
         makeTestData(articles);
+        if(articles.size() > 0){
+            articleLastId = articles.get(articles.size()-1).id;
+        }
 
         System.out.println("== 게시판 v 0.1 ==");
         System.out.println("== 프로그램 시작 ==");
@@ -52,13 +55,13 @@ public class Main {
                     String title = input.nextLine().trim();
                     System.out.print("내용 : ");
                     String body = input.nextLine().trim();
-                    int id = lastId + 1;
-                    lastId = id;
-                    Article article = new Article(lastId, title, body);
+                    int id = articleLastId + 1;
+                articleLastId = id;
+                    Article article = new Article(articleLastId, title, body);
                     lastArticle = article;
 
                     System.out.println("생성된 게시물 객체 :"+article);
-                    System.out.printf("%d번 게시물이 등록되었습니다.\n", lastId);
+                    System.out.printf("%d번 게시물이 등록되었습니다.\n", articleLastId);
                 }
 
                 else if(cmd.equals("/usr/article/detail")){
